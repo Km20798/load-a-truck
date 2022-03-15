@@ -1,0 +1,35 @@
+<%- include('./parts/head') %>
+
+    <%- include('./parts/nav') %>
+
+
+    <div class="form">
+        <form action="/parcels" method="post">
+            <div class="form-group">
+                <label for="name">Truck</label>
+                <select name="truck" id="truck" class="form-control">
+                    <% trucks.forEach(truck => { %>
+                        <option><%= truck.name%></option>
+                        <% }) %>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" name="name">
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight</label>
+                <input type="text" id="weight" class="form-control" name="weight">
+            </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input type="text" id="weight" class="form-control" name="image">
+            </div>
+            <br>
+            <button class="btn btn-success w-100">Add Parcel</button>
+        </form>
+    </div>
+
+
+
+<%- include('./parts/footer') %>

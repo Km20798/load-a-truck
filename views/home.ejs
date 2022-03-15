@@ -1,0 +1,30 @@
+<%- include('./parts/head') %>
+
+    <%- include('./parts/nav') %>
+
+    <%  %>
+
+    <div class="container">
+        <div class="row">
+            <% trucks.forEach(truck => { %>
+            <div class="col-md-4">
+                <div class="card"   >
+                    <img src="<%= truck.image%>" class="card-img-top" alt="..." height="250px">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= truck.name%></h5>
+                      <p class="card-text"><%= truck.weight%></p>
+                      <a href="/trucks/<%= truck.id%>" class="btn btn-primary" style="width: 100px;" >Parcels</a>
+                      <a href="/trucks/<%= truck.id%>/update" class="btn btn-primary" style="width: 100px;">Update</a>
+                      <a href="/trucks/<%= truck.id%>/delete" class="btn btn-danger" style="width: 100px;">Delete</a>
+                      <br><br>
+                      <a href="/trucks/<%= truck.id%>/unload" class="btn btn-danger w-100">unload</a>
+                      <a href="/trucks/<%= truck.id%>/detailes" class="btn btn-parmary w-100">Detailes</a>
+                    </div>
+                  </div>
+            </div>  
+            <% }) %>
+        </div>
+    </div>
+
+<%- include('./parts/footer') %>
+

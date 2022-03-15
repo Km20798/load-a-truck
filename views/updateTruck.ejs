@@ -1,0 +1,25 @@
+<%- include('./parts/head') %>
+
+    <%- include('./parts/nav') %>
+
+    <div  style="width: 40%; margin: auto; margin-top: 40px;">
+        <form action="/trucks/<%= truck.id%>" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" id="name" value="<%= truck.name %>">
+            </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input type="text" class="form-control" name="image" id="image" value="<%= truck.image %>">
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight</label>
+                <input type="text" class="form-control" name="weight" id="weight" value="<%= truck.weight %>">
+            </div>
+            <br>
+            <button class="btn btn-success w-100">Update</button>
+        </form>
+    </div>
+
+<%- include('./parts/footer') %>
+

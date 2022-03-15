@@ -1,0 +1,36 @@
+
+<%- include('./parts/head') %>
+
+    <%- include('./parts/nav') %>
+
+
+
+    <div class="container">
+        <div class="row">
+            <% parcels.forEach(parcel => { %>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-header">
+                        <img src="<%= parcel.image%>" alt="">
+                        </div>
+                        <div class="card-body">
+                        <h5 class="card-title"><%= parcel.name%></h5>
+                        <p class="card-text"><%=  parcel.weight%></p>
+                        </div>
+                        <div>
+                            <a href="/parcels/<%= parcel.id%>/update" class="btn btn-primary" style="width: 150px;">Update</a>
+                            <a href="/parcels/<%= parcel.id%>/delete" class="btn btn-danger" style="width: 150px;">Delete</a>
+                            <br><br>
+
+                        </div>
+                    </div>
+                </div>
+
+            <% }) %>
+        </div>
+    </div>
+
+
+  
+
+<%- include('./parts/footer') %>
